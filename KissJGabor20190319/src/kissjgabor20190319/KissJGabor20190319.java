@@ -28,7 +28,7 @@ public class KissJGabor20190319 {
     }
 
     // --- textdekoráció metódus vége
-    // --- fájl metódusok
+    // --- fájl kezelés
     private static void inputFile(String fileName, String mode) {
         try {
             f = new RandomAccessFile(fileName, mode);
@@ -63,8 +63,8 @@ public class KissJGabor20190319 {
         }
     }
 
-    // --- fájl metódusok vége
-    // --- a feladat metódusai vége
+    // --- fájl kezelés vége
+    // --- a feladat metódusai
     private static void f1(String label, String fileName, String mode) {
         f00(60, '-', label);
         inputFile(fileName, mode);
@@ -85,6 +85,17 @@ public class KissJGabor20190319 {
         System.out.println(str + "\n");
     }
 
+    private static void f2b() {
+        double max = carRefuelings.get(0).getRange();
+        for (int i = 0; i < carRefuelings.size(); i++) {
+            if (carRefuelings.get(i).getRange() > max) {
+                max = carRefuelings.get(i).getRange();
+            }
+        }
+        String str = String.format("A leghosszabb út: %.1f km volt.", max);
+        System.out.println(str);
+    }
+
     private static void f3(String label, String before, String behind) {
         f00(60, '-', label);
         for (CarRefueling carRefueling : carRefuelings) {
@@ -94,6 +105,15 @@ public class KissJGabor20190319 {
         str += String.format("%.2f", fullfuel);
         str += behind;
         System.out.println(str + "\n");
+    }
+
+    private static void f3b() {
+        double fuel = 0;
+        for (int i = 0; i < carRefuelings.size(); i++) {
+            fuel += carRefuelings.get(i).getQuantity();
+        }
+        String str = String.format("Összesen %.2f liter benzint tankolt.", fuel);
+        System.out.println(str);
     }
 
     private static void f4a(String label, String before, String behind) {
@@ -120,12 +140,21 @@ public class KissJGabor20190319 {
         System.out.println(str + "\n");
     }
 
+    private static void f4() {
+        double sum = 0;
+        int n = carRefuelings.size();
+        for (int i = 0; i < n; i++) {
+            sum += carRefuelings.get(i).getFuelAt100();
+        }
+        String str = String.format("Átlagfogyasztás: %.2f liter/100km.", sum / n);
+        System.out.println(str);
+    }
+
     private static void f5a(String label, String before, String behind) {
         f00(60, '-', label);
         for (CarRefueling carRefueling : carRefuelings) {
             if (carRefueling.getId().equals("NA")) {
                 na++;
-            } else {
             }
         }
         String str = before;
@@ -134,19 +163,42 @@ public class KissJGabor20190319 {
         System.out.println(str + "\n");
     }
 
+    private static void f5_a() {
+        int no = 0;
+        for (int i = 0; i < carRefuelings.size(); i++) {
+            if (carRefuelings.get(i).getId().equals("NA")) {
+                no++;
+            }
+        }
+        String str = "Nem jegyezte fel a benzinkút nevét:" + no + " alkalommal.";
+        System.out.println(str);
+    }
+
     private static void f5b(String label, String before, String behind) {
         f00(60, '-', label);
         int ntype = 0;
         for (CarRefueling carRefueling : carRefuelings) {
             if (carRefueling.getId().substring(0, 1).equals("N")) {
                 ntype++;
-            } else {
             }
         }
         String str = before;
         str += ntype - na;
         str += behind;
         System.out.println(str + "\n");
+    }
+
+    private static void f5_b() {
+        int ntype = 0;
+        for (int i = 0; i < carRefuelings.size(); i++) {
+            if (carRefuelings.get(i).getId().substring(0, 1).equals("N")) {
+                if (!carRefuelings.get(i).getId().substring(1, 2).equals("A")) {
+                    ntype++;
+                }
+            }
+        }
+        String str = "N-típusú benzinkútnál " + ntype + " alkalommal tankolt.";
+        System.out.println(str);
     }
 
     private static String toStringYearFuel(String year, double yearFuel) {
@@ -185,11 +237,16 @@ public class KissJGabor20190319 {
 
         f1("1. ", "sources/autoadatok.txt", "r");
         f2("2. ", "\tA leghosszabb út: ", " km volt.");
+        f2b();
         f3("3. ", "\tÖsszesen ", " liter benzint tankolt.");
+        f3b();
         f4a("4.a", "\tÁtlagfogyasztás: ", " liter/100km.");
         f4b("4.b", "\tÁtlagfogyasztás: ", " liter/100km.");
+        f4();
         f5a("5.a", "\tNem jegyezte fel a benzinkút nevét:", " alkalommal.");
+        f5_a();
         f5b("5.b", "\tN-típusú benzinkútnál ", " alkalommal tankolt.");
+        f5_b();
         f6("6. ", "target/evenkent.txt", "rw", " l");
 
         f00(60, '-', "");
