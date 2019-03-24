@@ -1,0 +1,13 @@
+run:
+
+1. Az [1, 10] intervallum: 
+ 1 2 3 4 5 6 7 8 9 10
+
+2. Tíz véletlenszám az [1, 50] intervallumból: 
+ 6 38 11 24 16 40 20 5 43 8
+
+3. Az első N<20 négyzetszám: 
+ N = 15
+ 1 4 9 16 25 36 49 64 81 100 121 144 169 196 225
+BUILD SUCCESSFUL (total time: 9 seconds)
+
