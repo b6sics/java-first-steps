@@ -1,0 +1,6 @@
+run:
+7 + 10 = 17
+7 * 10 = 70
+7 - 10 = -3
+BUILD SUCCESSFUL (total time: 0 seconds)
+
