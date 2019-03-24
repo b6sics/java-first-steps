@@ -1,0 +1,14 @@
+run:
+1, 23, 7, 0, -2, -45
+-45, -2, 0, 7, 23, 1
+
+a 't1' tömb összege: -16
+
+5, 115, 35, 0, -10, -225, 55, 615, 85, 550
+550, 85, 615, 55, -225, -10, 0, 35, 115, 5
+
+a 't2' tömb összege: 245
+a 't2' tömb összegének az ötszöröse: 1225
+
+BUILD SUCCESSFUL (total time: 0 seconds)
+

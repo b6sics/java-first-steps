@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>KJG13ED_Arrays.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced}
+pre {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.ST0 {font-family: Monospaced; font-weight: bold}
+.ST3 {color: #009900}
+.ST2 {font-family: Monospaced; font-weight: bold; font-style: italic}
+.ST1 {color: #009900; font-family: Monospaced; font-style: italic}
+.ST4 {font-family: Monospaced; font-style: italic}
+.literal {color: #0000e6}
+.string {color: #ce7b00}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">G:\aB6sicsGIT\java-first-steps\11 Tömbök\src\kjg13ed_arrays\KJG13ED_Arrays.java</td></tr></table>
+<pre>
+<span class="literal">package</span> kjg13ed_arrays;
+
+<span class="literal">import</span> java.util.*;
+
+<span class="literal">public</span> <span class="literal">class</span> <span class="ST0">KJG13ED_Arrays</span> {
+
+    <span class="literal">static</span> Scanner <span class="ST1">sc</span> = <span class="literal">new</span> Scanner(System.<span class="ST1">in</span>);
+
+    <span class="literal">private</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST2">f1</span>() {
+        <span class="literal">int</span>[] t = {1, 23, 7, 0, -2, -45};
+        <span class="literal">int</span> n = t.<span class="ST3">length</span>;
+        <span class="literal">int</span> szum = 0;
+        <span class="literal">for</span> (<span class="literal">int</span> ii = 0; ii &lt; n - 1; ii++) {
+            System.<span class="ST1">out</span>.print(t[ii]);
+            szum += t[ii];
+            System.<span class="ST1">out</span>.print(<span class="string">&quot;</span><span class="string">, </span><span class="string">&quot;</span>);
+        }
+        System.<span class="ST1">out</span>.println(t[n - 1]);
+        szum += t[n - 1];
+
+        <span class="literal">for</span> (<span class="literal">int</span> ii = n - 1; ii &gt; 0; ii--) {
+            System.<span class="ST1">out</span>.print(t[ii]);
+            System.<span class="ST1">out</span>.print(<span class="string">&quot;</span><span class="string">, </span><span class="string">&quot;</span>);
+        }
+        System.<span class="ST1">out</span>.println(t[0]);
+        System.<span class="ST1">out</span>.println(<span class="string">&quot;&quot;</span>);
+        System.<span class="ST1">out</span>.print(<span class="string">&quot;</span><span class="string">a &#39;t1&#39; tömb összege: </span><span class="string">&quot;</span>);
+        System.<span class="ST1">out</span>.println(szum);
+        System.<span class="ST1">out</span>.println(<span class="string">&quot;&quot;</span>);
+    }
+
+    <span class="literal">private</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST2">f2</span>() {
+        <span class="literal">int</span>[] t = {1, 23, 7, 0, -2, -45, 11, 123, 17, 110};
+        <span class="literal">int</span> n = t.<span class="ST3">length</span>;
+        <span class="literal">int</span> szum = 0;
+        <span class="literal">for</span> (<span class="literal">int</span> ii = 0;
+                ii &lt; n - 1; ii++) {
+            System.<span class="ST1">out</span>.print(5 * t[ii]);
+            szum += t[ii];
+            System.<span class="ST1">out</span>.print(<span class="string">&quot;</span><span class="string">, </span><span class="string">&quot;</span>);
+        }
+
+        System.<span class="ST1">out</span>.println(5 * t[n - 1]);
+        szum += t[n - 1];
+
+        <span class="literal">for</span> (<span class="literal">int</span> ii = n - 1;
+                ii &gt; 0; ii--) {
+            System.<span class="ST1">out</span>.print(5 * t[ii]);
+            System.<span class="ST1">out</span>.print(<span class="string">&quot;</span><span class="string">, </span><span class="string">&quot;</span>);
+        }
+
+        System.<span class="ST1">out</span>.println(
+                5 * t[0]);
+        System.<span class="ST1">out</span>.println(
+                <span class="string">&quot;&quot;</span>);
+        System.<span class="ST1">out</span>.print(
+                <span class="string">&quot;</span><span class="string">a &#39;t2&#39; tömb összege: </span><span class="string">&quot;</span>);
+        System.<span class="ST1">out</span>.println(
+                szum);
+        System.<span class="ST1">out</span>.print(
+                <span class="string">&quot;</span><span class="string">a &#39;t2&#39; tömb összegének az ötszöröse: </span><span class="string">&quot;</span>);
+        System.<span class="ST1">out</span>.println(
+                5 * szum);
+        System.<span class="ST1">out</span>.println(
+                <span class="string">&quot;&quot;</span>);
+    }
+
+    <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST2">main</span>(String[] args) {
+        <span class="ST4">f1</span>();
+        <span class="ST4">f2</span>();
+    }
+
+}
+
+</pre></body>
+</html>
