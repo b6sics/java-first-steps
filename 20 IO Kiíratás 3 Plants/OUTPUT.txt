@@ -1,0 +1,24 @@
+run:
+* |START - Java20190211InOutput_Plants| ******************************
+1. A txt/adatok.txt... beolvasva
+
+ABC sorrendbe rendezés kész!
+
+- |1. A növények neve szerint A-Z sorrend: | -------------------------
+A txt/f1.txt.... kész!
+
+- |2. Az import átlag nagyobb 100000 tőnél: | ------------------------
+A txt/f2.txt.... kész!
+
+- |3. 2018-ban csökkent az import 2012-höz képest: | -----------------
+A txt/f3.txt.... kész!
+
+- |HF1. A 2018-as mennyiség legalább négyszerese az 2014-esnek: | ----
+A txt/hf1.txt.... kész!
+
+- |HF2. A legnagyobb importált mennyiség növényenként: | -------------
+A txt/hf2.txt.... kész!
+
+* |END - Java20190211InOutput_Plants| ********************************
+BUILD SUCCESSFUL (total time: 0 seconds)
+
