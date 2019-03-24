@@ -1,0 +1,12 @@
+run:
+A csoki ára = 5
+Vegyünk 1 csokit!
+
+Kérek egy pozitív egész számot = 65
+páratlan
+
+Kérem a dolgozat pontszámát [0;50] = 45
+jeles
+
+BUILD SUCCESSFUL (total time: 17 seconds)
+
