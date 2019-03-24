@@ -1,0 +1,7 @@
+run:
+a= 5
+b= 6
+5 + 6 = 11
+A nagyobb szám: 6
+BUILD SUCCESSFUL (total time: 8 seconds)
+
