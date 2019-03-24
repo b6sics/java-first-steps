@@ -21,7 +21,7 @@ table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
 </style>
 </head>
 <body>
-<table width="100%"><tr><td align="center">KissJGabor20190319.java</td></tr></table>
+<table width="100%"><tr><td align="center">G:\aB6sicsGIT\java-first-steps\KissJGabor20190319\src\kissjgabor20190319\KissJGabor20190319.java</td></tr></table>
 <pre>
 <span class="literal">package</span> kissjgabor20190319;
 
@@ -53,7 +53,7 @@ table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
     }
 
     <span class="comment">// --- textdekoráció metódus vége</span>
-    <span class="comment">// --- fájl metódusok</span>
+    <span class="comment">// --- fájl kezelés</span>
     <span class="literal">private</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST3">inputFile</span>(String fileName, String mode) {
         <span class="literal">try</span> {
             <span class="ST2">f</span> = <span class="literal">new</span> RandomAccessFile(fileName, mode);
@@ -88,7 +88,7 @@ table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
         }
     }
 
-    <span class="comment">// --- fájl metódusok vége</span>
+    <span class="comment">// --- fájl kezelés vége</span>
     <span class="comment">// --- a feladat metódusai</span>
     <span class="literal">private</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST3">f1</span>(String label, String fileName, String mode) {
         <span class="ST4">f00</span>(60, <span class="string">&#39;</span><span class="string">-</span><span class="string">&#39;</span>, label);
@@ -110,6 +110,17 @@ table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
         System.<span class="ST2">out</span>.println(str + <span class="string">&quot;</span><span class="ST5">\n</span><span class="string">&quot;</span>);
     }
 
+    <span class="literal">private</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST3">f2b</span>() {
+        <span class="literal">double</span> max = <span class="ST2">carRefuelings</span>.get(0).getRange();
+        <span class="literal">for</span> (<span class="literal">int</span> i = 0; i &lt; <span class="ST2">carRefuelings</span>.size(); i++) {
+            <span class="literal">if</span> (<span class="ST2">carRefuelings</span>.get(i).getRange() &gt; max) {
+                max = <span class="ST2">carRefuelings</span>.get(i).getRange();
+            }
+        }
+        String str = String.<span class="ST4">format</span>(<span class="string">&quot;</span><span class="string">A leghosszabb út: %.1f km volt.</span><span class="string">&quot;</span>, max);
+        System.<span class="ST2">out</span>.println(str);
+    }
+
     <span class="literal">private</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST3">f3</span>(String label, String before, String behind) {
         <span class="ST4">f00</span>(60, <span class="string">&#39;</span><span class="string">-</span><span class="string">&#39;</span>, label);
         <span class="literal">for</span> (CarRefueling carRefueling : <span class="ST2">carRefuelings</span>) {
@@ -119,6 +130,15 @@ table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
         str += String.<span class="ST4">format</span>(<span class="string">&quot;</span><span class="string">%.2f</span><span class="string">&quot;</span>, <span class="ST2">fullfuel</span>);
         str += behind;
         System.<span class="ST2">out</span>.println(str + <span class="string">&quot;</span><span class="ST5">\n</span><span class="string">&quot;</span>);
+    }
+
+    <span class="literal">private</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST3">f3b</span>() {
+        <span class="literal">double</span> fuel = 0;
+        <span class="literal">for</span> (<span class="literal">int</span> i = 0; i &lt; <span class="ST2">carRefuelings</span>.size(); i++) {
+            fuel += <span class="ST2">carRefuelings</span>.get(i).getQuantity();
+        }
+        String str = String.<span class="ST4">format</span>(<span class="string">&quot;</span><span class="string">Összesen %.2f liter benzint tankolt.</span><span class="string">&quot;</span>, fuel);
+        System.<span class="ST2">out</span>.println(str);
     }
 
     <span class="literal">private</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST3">f4a</span>(String label, String before, String behind) {
@@ -145,12 +165,21 @@ table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
         System.<span class="ST2">out</span>.println(str + <span class="string">&quot;</span><span class="ST5">\n</span><span class="string">&quot;</span>);
     }
 
+    <span class="literal">private</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST3">f4</span>() {
+        <span class="literal">double</span> sum = 0;
+        <span class="literal">int</span> n = <span class="ST2">carRefuelings</span>.size();
+        <span class="literal">for</span> (<span class="literal">int</span> i = 0; i &lt; n; i++) {
+            sum += <span class="ST2">carRefuelings</span>.get(i).getFuelAt100();
+        }
+        String str = String.<span class="ST4">format</span>(<span class="string">&quot;</span><span class="string">Átlagfogyasztás: %.2f liter/100km.</span><span class="string">&quot;</span>, sum / n);
+        System.<span class="ST2">out</span>.println(str);
+    }
+
     <span class="literal">private</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST3">f5a</span>(String label, String before, String behind) {
         <span class="ST4">f00</span>(60, <span class="string">&#39;</span><span class="string">-</span><span class="string">&#39;</span>, label);
         <span class="literal">for</span> (CarRefueling carRefueling : <span class="ST2">carRefuelings</span>) {
             <span class="literal">if</span> (carRefueling.getId().equals(<span class="string">&quot;</span><span class="string">NA</span><span class="string">&quot;</span>)) {
                 <span class="ST2">na</span>++;
-            } <span class="literal">else</span> {
             }
         }
         String str = before;
@@ -159,19 +188,42 @@ table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
         System.<span class="ST2">out</span>.println(str + <span class="string">&quot;</span><span class="ST5">\n</span><span class="string">&quot;</span>);
     }
 
+    <span class="literal">private</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST3">f5_a</span>() {
+        <span class="literal">int</span> no = 0;
+        <span class="literal">for</span> (<span class="literal">int</span> i = 0; i &lt; <span class="ST2">carRefuelings</span>.size(); i++) {
+            <span class="literal">if</span> (<span class="ST2">carRefuelings</span>.get(i).getId().equals(<span class="string">&quot;</span><span class="string">NA</span><span class="string">&quot;</span>)) {
+                no++;
+            }
+        }
+        String str = <span class="string">&quot;</span><span class="string">Nem jegyezte fel a benzinkút nevét:</span><span class="string">&quot;</span> + no + <span class="string">&quot;</span><span class="string"> alkalommal.</span><span class="string">&quot;</span>;
+        System.<span class="ST2">out</span>.println(str);
+    }
+
     <span class="literal">private</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST3">f5b</span>(String label, String before, String behind) {
         <span class="ST4">f00</span>(60, <span class="string">&#39;</span><span class="string">-</span><span class="string">&#39;</span>, label);
         <span class="literal">int</span> ntype = 0;
         <span class="literal">for</span> (CarRefueling carRefueling : <span class="ST2">carRefuelings</span>) {
             <span class="literal">if</span> (carRefueling.getId().substring(0, 1).equals(<span class="string">&quot;</span><span class="string">N</span><span class="string">&quot;</span>)) {
                 ntype++;
-            } <span class="literal">else</span> {
             }
         }
         String str = before;
         str += ntype - <span class="ST2">na</span>;
         str += behind;
         System.<span class="ST2">out</span>.println(str + <span class="string">&quot;</span><span class="ST5">\n</span><span class="string">&quot;</span>);
+    }
+
+    <span class="literal">private</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST3">f5_b</span>() {
+        <span class="literal">int</span> ntype = 0;
+        <span class="literal">for</span> (<span class="literal">int</span> i = 0; i &lt; <span class="ST2">carRefuelings</span>.size(); i++) {
+            <span class="literal">if</span> (<span class="ST2">carRefuelings</span>.get(i).getId().substring(0, 1).equals(<span class="string">&quot;</span><span class="string">N</span><span class="string">&quot;</span>)) {
+                <span class="literal">if</span> (!<span class="ST2">carRefuelings</span>.get(i).getId().substring(1, 2).equals(<span class="string">&quot;</span><span class="string">A</span><span class="string">&quot;</span>)) {
+                    ntype++;
+                }
+            }
+        }
+        String str = <span class="string">&quot;</span><span class="string">N-típusú benzinkútnál </span><span class="string">&quot;</span> + ntype + <span class="string">&quot;</span><span class="string"> alkalommal tankolt.</span><span class="string">&quot;</span>;
+        System.<span class="ST2">out</span>.println(str);
     }
 
     <span class="literal">private</span> <span class="literal">static</span> String <span class="ST3">toStringYearFuel</span>(String year, <span class="literal">double</span> yearFuel) {
@@ -210,11 +262,16 @@ table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
 
         <span class="ST4">f1</span>(<span class="string">&quot;</span><span class="string">1. </span><span class="string">&quot;</span>, <span class="string">&quot;</span><span class="string">sources/autoadatok.txt</span><span class="string">&quot;</span>, <span class="string">&quot;</span><span class="string">r</span><span class="string">&quot;</span>);
         <span class="ST4">f2</span>(<span class="string">&quot;</span><span class="string">2. </span><span class="string">&quot;</span>, <span class="string">&quot;</span><span class="ST5">\t</span><span class="string">A leghosszabb út: </span><span class="string">&quot;</span>, <span class="string">&quot;</span><span class="string"> km volt.</span><span class="string">&quot;</span>);
+        <span class="ST4">f2b</span>();
         <span class="ST4">f3</span>(<span class="string">&quot;</span><span class="string">3. </span><span class="string">&quot;</span>, <span class="string">&quot;</span><span class="ST5">\t</span><span class="string">Összesen </span><span class="string">&quot;</span>, <span class="string">&quot;</span><span class="string"> liter benzint tankolt.</span><span class="string">&quot;</span>);
+        <span class="ST4">f3b</span>();
         <span class="ST4">f4a</span>(<span class="string">&quot;</span><span class="string">4.a</span><span class="string">&quot;</span>, <span class="string">&quot;</span><span class="ST5">\t</span><span class="string">Átlagfogyasztás: </span><span class="string">&quot;</span>, <span class="string">&quot;</span><span class="string"> liter/100km.</span><span class="string">&quot;</span>);
         <span class="ST4">f4b</span>(<span class="string">&quot;</span><span class="string">4.b</span><span class="string">&quot;</span>, <span class="string">&quot;</span><span class="ST5">\t</span><span class="string">Átlagfogyasztás: </span><span class="string">&quot;</span>, <span class="string">&quot;</span><span class="string"> liter/100km.</span><span class="string">&quot;</span>);
+        <span class="ST4">f4</span>();
         <span class="ST4">f5a</span>(<span class="string">&quot;</span><span class="string">5.a</span><span class="string">&quot;</span>, <span class="string">&quot;</span><span class="ST5">\t</span><span class="string">Nem jegyezte fel a benzinkút nevét:</span><span class="string">&quot;</span>, <span class="string">&quot;</span><span class="string"> alkalommal.</span><span class="string">&quot;</span>);
+        <span class="ST4">f5_a</span>();
         <span class="ST4">f5b</span>(<span class="string">&quot;</span><span class="string">5.b</span><span class="string">&quot;</span>, <span class="string">&quot;</span><span class="ST5">\t</span><span class="string">N-típusú benzinkútnál </span><span class="string">&quot;</span>, <span class="string">&quot;</span><span class="string"> alkalommal tankolt.</span><span class="string">&quot;</span>);
+        <span class="ST4">f5_b</span>();
         <span class="ST4">f6</span>(<span class="string">&quot;</span><span class="string">6. </span><span class="string">&quot;</span>, <span class="string">&quot;</span><span class="string">target/evenkent.txt</span><span class="string">&quot;</span>, <span class="string">&quot;</span><span class="string">rw</span><span class="string">&quot;</span>, <span class="string">&quot;</span><span class="string"> l</span><span class="string">&quot;</span>);
 
         <span class="ST4">f00</span>(60, <span class="string">&#39;</span><span class="string">-</span><span class="string">&#39;</span>, <span class="string">&quot;&quot;</span>);
