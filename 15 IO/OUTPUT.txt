@@ -1,0 +1,31 @@
+run:
+Ug Imre
+Tóbiás Félix
+Kozma Alfonz
+Csabai Kázmér
+Pác János
+Csonka Elemér
+Örvös Eduárd
+Csõsz Béla
+Haragos Csaba
+Albert Gyula
+Bacsó Gabriella
+Bán Béla
+Birkás Lajos
+Csángó Pál
+Csontos Károly
+Dénes László
+Dobó Ernõ
+Érsek Márta
+Farádi Anikó
+Gál Ádám
+Hegedûs Zoltán
+Illés Miklós
+Jakab Ágnes
+Káli Lajos
+Kocsis Judit
+Kósa Gyula
+Kovács Rita
+Kozma Kálmán
+BUILD SUCCESSFUL (total time: 0 seconds)
+
