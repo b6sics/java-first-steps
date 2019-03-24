@@ -1,0 +1,20 @@
+run:
+********
+4 7
+6 10
+7 9
+5 6
+4 7
+3 10
+5 6
+6 7
+3 8
+3 8
+********
+A háromszög
+             alapja   : 2
+             magassága: 3
+             területe : 3.0
+--------------------
+BUILD SUCCESSFUL (total time: 0 seconds)
+
