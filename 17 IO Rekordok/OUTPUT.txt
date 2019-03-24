@@ -1,0 +1,56 @@
+run:
+START JAVA RECORDS *****************************************
+A 170 cm-nél magasabb lányok: ------------------------------
+   Ördög Eszter  172 cm
+    Endrei Kata  176 cm
+     Csaba Anna  172 cm
+       Nagy Zoé  171 cm
+     Jakab Irma  172 cm
+     Cilei Sára  176 cm
+   Kaszás Panni  175 cm
+
+A fiúk létszáma: -------------------------------------------
+   19 fő.
+
+Név és test tömeg index: -----------------------------------
+           Orosz Éva    130,41 
+        Ördög Eszter     72,24 
+         Árva Zoltán     87,78 
+           Pálos Pál    109,56 
+         István Joli    112,18 
+         Rozsom Márk    121,68 
+         Fejes Adolf     93,08 
+         Endrei Kata     73,92 
+         Fitos János    113,60 
+        Vidák Róbert     89,44 
+           Nyúl Béla     85,32 
+          Csaba Anna     72,24 
+            Nagy Zoé    148,77 
+          Sebes Feri    136,80 
+           Arany Ági     71,81 
+        Gyulai Panna    115,92 
+          Jakab Irma     80,84 
+           Rajna Pál    147,74 
+          Tisza Jenõ     74,39 
+         Dömsödi Pál     90,60 
+         Hajnal Feri    107,10 
+        Balogh Emese    115,20 
+           Hence Éva     78,89 
+        Albert Kitti    131,20 
+          Cilei Sára     95,04 
+        Makács Nátán    102,07 
+    Érmelléki Károly     86,92 
+       Ligeti Sándor     80,16 
+       Szigeti Gábor    140,28 
+          Ázsok Ildi     94,54 
+       Göröcs Sándor    105,70 
+        Kajtos Enikõ     85,17 
+           Ötvös Pál    151,38 
+        Kaszás Panni    152,25 
+          Ujvári Éva    132,24 
+           Zala Pali    109,74 
+          Zsobó Lili    108,50 
+
+VÉGE JAVA RECORDS ******************************************
+BUILD SUCCESSFUL (total time: 0 seconds)
+

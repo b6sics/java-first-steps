@@ -1,0 +1,114 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>JavaRecords.java</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<style type="text/css">
+<!--
+body {color: #000000; background-color: #ffffff; font-family: Monospaced}
+pre {color: #000000; background-color: #ffffff; font-family: Monospaced}
+table {color: #000000; background-color: #e9e8e2; font-family: Monospaced}
+.ST0 {color: #969696; font-family: Monospaced; font-weight: bold}
+.ST1 {font-family: Monospaced; font-weight: bold}
+.comment {color: #969696}
+.ST3 {font-family: Monospaced; font-weight: bold; font-style: italic}
+.ST2 {color: #009900; font-family: Monospaced; font-style: italic}
+.ST5 {font-family: Monospaced; font-style: italic}
+.literal {color: #0000e6}
+.ST4 {color: #ce7b00; font-family: Monospaced; font-weight: bold}
+.string {color: #ce7b00}
+-->
+</style>
+</head>
+<body>
+<table width="100%"><tr><td align="center">G:\aB6sicsGIT\java-first-steps\17 IO Rekordok\src\javarecords\JavaRecords.java</td></tr></table>
+<pre>
+<span class="literal">package</span> javarecords;
+
+<span class="literal">import</span> java.io.*;
+
+<span class="comment">/**</span>
+<span class="comment"> *</span>
+<span class="comment"> * </span><span class="ST0">@author</span> <span class="comment">KjG</span>
+ <span class="comment">*/</span>
+<span class="literal">public</span> <span class="literal">class</span> <span class="ST1">JavaRecords</span> {
+
+    <span class="literal">private</span> <span class="literal">static</span> <span class="literal">final</span> <span class="literal">int</span> <span class="ST2">N</span> = 37;
+    <span class="literal">private</span> <span class="literal">static</span> <span class="literal">final</span> <span class="literal">int</span> <span class="ST2">L</span> = 4;
+    <span class="literal">private</span> <span class="literal">static</span> String <span class="ST2">m</span>[][] = <span class="literal">new</span> String[<span class="ST2">N</span>][<span class="ST2">L</span>];
+    <span class="literal">private</span> <span class="literal">static</span> RandomAccessFile <span class="ST2">f</span>;
+
+    <span class="literal">private</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST3">f00</span>(<span class="literal">int</span> hossz, <span class="literal">char</span> jel, String name) {
+        System.<span class="ST2">out</span>.print(name);
+        <span class="literal">for</span> (<span class="literal">int</span> ii = name.length(); ii &lt; hossz; ii++) {
+            System.<span class="ST2">out</span>.print(jel);
+        }
+        System.<span class="ST2">out</span>.println(<span class="string">&quot;&quot;</span>);
+    }
+
+    <span class="literal">private</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST3">f0</span>(String inputfile, String mode) {
+        <span class="literal">try</span> {
+            <span class="ST2">f</span> = <span class="literal">new</span> RandomAccessFile(inputfile, mode);
+            <span class="literal">for</span> (<span class="literal">int</span> ii = 0; ii &lt; <span class="ST2">N</span>; ii++) {
+                String sor = <span class="ST2">f</span>.readLine();
+                <span class="ST2">m</span>[ii] = sor.split(<span class="string">&quot;</span><span class="ST4">\t</span><span class="string">&quot;</span>);
+            }
+            <span class="ST2">f</span>.close();
+        } <span class="literal">catch</span> (IOException e) {
+            System.<span class="ST2">err</span>.println(<span class="string">&quot;</span><span class="string">HIBA: </span><span class="string">&quot;</span> + e.getMessage());
+            System.<span class="ST5">exit</span>(1);
+        }
+    }
+
+    <span class="literal">private</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST3">f1</span>(String cimke) {
+        <span class="ST5">f00</span>(60, <span class="string">&#39;</span><span class="string">-</span><span class="string">&#39;</span>, cimke);
+
+        <span class="literal">for</span> (<span class="literal">int</span> ii = 0; ii &lt; <span class="ST2">N</span>; ii++) {
+            <span class="literal">int</span> tm = Integer.<span class="ST5">parseInt</span>(<span class="ST2">m</span>[ii][2]);
+            <span class="literal">if</span> (<span class="ST2">m</span>[ii][1].equals(<span class="string">&quot;</span><span class="string">L</span><span class="string">&quot;</span>) &amp;&amp; tm &gt; 170) {
+                String str = String.<span class="ST5">format</span>(<span class="string">&quot;</span><span class="string">%15s%5d cm</span><span class="string">&quot;</span>, <span class="ST2">m</span>[ii][0], tm);
+                System.<span class="ST2">out</span>.println(str);
+            }
+        }
+        System.<span class="ST2">out</span>.println(<span class="string">&quot;&quot;</span>);
+    }
+
+    <span class="literal">private</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST3">f2</span>(String cimke) {
+        <span class="literal">int</span> db = 0;
+        <span class="ST5">f00</span>(60, <span class="string">&#39;</span><span class="string">-</span><span class="string">&#39;</span>, cimke);
+
+        <span class="literal">for</span> (<span class="literal">int</span> ii = 0; ii &lt; <span class="ST2">N</span>; ii++) {
+            <span class="literal">if</span> (<span class="ST2">m</span>[ii][1].equals(<span class="string">&quot;</span><span class="string">F</span><span class="string">&quot;</span>)) {
+                db++;
+            }
+        }
+        String str = String.<span class="ST5">format</span>(<span class="string">&quot;</span><span class="string">%5d fő.</span><span class="string">&quot;</span>, db);
+        System.<span class="ST2">out</span>.println(str);
+        System.<span class="ST2">out</span>.println(<span class="string">&quot;&quot;</span>);
+    }
+
+    <span class="literal">private</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST3">f3</span>(String cimke) {
+        <span class="ST5">f00</span>(60, <span class="string">&#39;</span><span class="string">-</span><span class="string">&#39;</span>, cimke);
+
+        <span class="literal">for</span> (<span class="literal">int</span> ii = 0; ii &lt; <span class="ST2">N</span>; ii++) {
+            <span class="literal">double</span> mag = Double.<span class="ST5">parseDouble</span>(<span class="ST2">m</span>[ii][2]);
+            <span class="literal">int</span> suly = Integer.<span class="ST5">parseInt</span>(<span class="ST2">m</span>[ii][3]);
+            String str = String.<span class="ST5">format</span>(<span class="string">&quot;</span><span class="string">%20s%10.2f </span><span class="string">&quot;</span>, <span class="ST2">m</span>[ii][0], (mag / 100 * suly));
+            System.<span class="ST2">out</span>.println(str);
+        }
+        System.<span class="ST2">out</span>.println(<span class="string">&quot;&quot;</span>);
+    }
+
+    <span class="literal">public</span> <span class="literal">static</span> <span class="literal">void</span> <span class="ST3">main</span>(String[] args) {
+        <span class="ST5">f00</span>(60, <span class="string">&#39;</span><span class="string">*</span><span class="string">&#39;</span>, <span class="string">&quot;</span><span class="string">START JAVA RECORDS </span><span class="string">&quot;</span>);
+        <span class="ST5">f0</span>(<span class="string">&quot;</span><span class="string">12C.txt</span><span class="string">&quot;</span>, <span class="string">&quot;</span><span class="string">r</span><span class="string">&quot;</span>);
+        <span class="ST5">f1</span>(<span class="string">&quot;</span><span class="string">A 170 cm-nél magasabb lányok: </span><span class="string">&quot;</span>);
+        <span class="ST5">f2</span>(<span class="string">&quot;</span><span class="string">A fiúk létszáma: </span><span class="string">&quot;</span>);
+        <span class="ST5">f3</span>(<span class="string">&quot;</span><span class="string">Név és test tömeg index: </span><span class="string">&quot;</span>);
+        <span class="ST5">f00</span>(60, <span class="string">&#39;</span><span class="string">*</span><span class="string">&#39;</span>, <span class="string">&quot;</span><span class="string">VÉGE JAVA RECORDS </span><span class="string">&quot;</span>);
+    }
+
+}
+
+</pre></body>
+</html>
