@@ -1,0 +1,47 @@
+run:
+START JAVA Input Output ************************************
+12C.txt beolvasva!
+LÁNYOK -----------------------------------------------------
+           Orosz Éva
+        Ördög Eszter
+         István Joli
+         Endrei Kata
+          Csaba Anna
+            Nagy Zoé
+           Arany Ági
+        Gyulai Panna
+          Jakab Irma
+        Balogh Emese
+           Hence Éva
+        Albert Kitti
+          Cilei Sára
+          Ázsok Ildi
+        Kajtos Enikõ
+        Kaszás Panni
+          Ujvári Éva
+          Zsobó Lili
+3-as ÁTLAG FELETTI FIÚK ------------------------------------
+         Árva Zoltán
+           Nyúl Béla
+          Sebes Feri
+         Hajnal Feri
+    Érmelléki Károly
+       Szigeti Gábor
+5-ős ANGOL FIÚK --------------------------------------------
+         Árva Zoltán
+          Sebes Feri
+Akinek német jegye == Zala Pali ----------------------------
+Zala Pali német: 3------------------------------------------
+           Pálos Pál
+         Endrei Kata
+         Fitos János
+            Nagy Zoé
+          Sebes Feri
+        Gyulai Panna
+         Dömsödi Pál
+           Hence Éva
+          Cilei Sára
+       Göröcs Sándor
+END JAVA Input Output **************************************
+BUILD SUCCESSFUL (total time: 0 seconds)
+
