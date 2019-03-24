@@ -1,0 +1,14 @@
+run:
+
+ 1. feladat
+    -2   -17    -7    -6   -17
+
+ 2. feladat
+     4    18    14    20    16
+	A pozitív páros számok összege: 72
+
+ 3. feladat
+     4   -17    -7    -6     5   -17     7
+	A számok átlaga:  -4,43
+BUILD SUCCESSFUL (total time: 0 seconds)
+
